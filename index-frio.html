@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Planner Zap - Saia do Vermelho em 7 Dias Usando Apenas WhatsApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .sticky-cta.show {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 scroll-smooth">
+    <!-- Sticky CTA -->
+    <div id="sticky-cta" class="sticky-cta bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 shadow-2xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <p class="font-bold text-lg">🔥 Oferta Especial: R$ 27/mês</p>
+                <p class="text-sm opacity-90">Acesso imediato ao bot no WhatsApp</p>
+            </div>
+            <button onclick="scrollToCTA()" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                QUERO COMEÇAR AGORA
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="mb-6">
+                <span class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold">
+                    ⚠️ Não feche esta página - Você vai descobrir o método mais simples para controlar suas finanças
+                </span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                "Para Pessoas Endividadas Que Estão Cansadas de<br>
+                <span class="text-yellow-300">Planilhas Complicadas Que Nunca Funcionam...</span>"
+            </h1>
+            
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                Mais de 500 Brasileiros Já Saíram do<br>
+                <span class="text-yellow-300">Vermelho Usando Este Método Simples</span>
+            </h2>
+            
+            <p class="text-2xl md:text-3xl font-semibold mb-8">
+                (E Você Pode Ser o Próximo em 7 Dias)
+            </p>
+            
+            <p class="text-lg mb-8 opacity-90">
+                Sim, aquele app que você já usa todo dia
+            </p>
+            
+            <button onclick="scrollToCTA()" class="pulse-animation bg-yellow-400 text-gray-900 px-8 py-6 rounded-lg text-2xl font-black hover:bg-yellow-300 transition transform hover:scale-105">
+                SIM! QUERO SAIR DO VERMELHO
+            </button>
+            
+            <p class="mt-6 text-sm opacity-80">
+                <i class="fas fa-check-circle mr-2"></i>Sem planilhas complicadas. Sem aplicativos confusos.<br>
+                Apenas 2 minutos por dia no WhatsApp.
+            </p>
+        </div>
+    </section>
+
+    <!-- Problema Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                A Verdade Que Ninguém Te Conta Sobre<br>
+                <span class="gradient-text">Por Que Você Ainda Está Endividado...</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="mb-6">
+                        <i class="fas fa-times-circle text-6xl text-red-500 mb-4"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-red-600">NÃO É:</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li>• Por falta de vontade</li>
+                        <li>• Porque você "não sabe economizar"</li>
+                        <li>• Porque você é "burro com dinheiro"</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center">
+                    <div class="mb-6">
+                        <i class="fas fa-lightbulb text-6xl text-yellow-500 mb-4"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-green-600">A VERDADE É:</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li>🚫 As planilhas são MASSIVAS demais</li>
+                        <li>🚫 Os aplicativos são COMPLICADOS demais</li>
+                        <li>🚫 O processo é CHATO demais</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6 text-center">
+                <p class="text-xl font-bold text-red-600 mb-4">Resultado? Você desiste no primeiro mês.</p>
+                
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">MAS E SE EXISTISSE UMA FORMA MAIS SIMPLES?</h3>
+                
+                <p class="text-lg text-gray-700 mb-4">
+                    E se você pudesse controlar TODO o seu dinheiro usando apenas o WhatsApp?
+                </p>
+                
+                <p class="text-lg text-gray-700 mb-4">
+                    Anotando suas despesas como se fosse uma conversa normal?
+                </p>
+                
+                <p class="text-lg text-gray-700">
+                    Sem abrir planilhas. Sem preencher formulários. Sem cadastrar mil categorias.
+                </p>
+                
+                <div class="mt-6 bg-green-100 text-green-800 p-4 rounded-lg">
+                    <p class="text-xl font-bold">ISSO EXISTE. E mais de 500 pessoas já estão usando.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solução Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Apresentando o <span class="gradient-text">Meu Planner Zap:</span><br>
+                O Jeito Mais Fácil de Controlar Suas Finanças
+            </h2>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-center">Funciona assim:</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-purple-600">1</span>
+                        </div>
+                        <h4 class="font-bold mb-2">PASSO 1</h4>
+                        <p class="text-gray-700">Você adiciona o Meu Planner Zap no WhatsApp</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-purple-600">2</span>
+                        </div>
+                        <h4 class="font-bold mb-2">PASSO 2</h4>
+                        <p class="text-gray-700">Conversa suas despesas como faria com um amigo</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl font-bold text-purple-600">3</span>
+                        </div>
+                        <h4 class="font-bold mb-2">PASSO 3</h4>
+                        <p class="text-gray-700">Acessa um dashboard simples com tudo organizado</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-2xl font-bold text-green-600">PRONTO. Só isso.</p>
+                    <p class="text-gray-700 mt-4">
+                        Nada de planilhas gigantes.<br>
+                        Nada de aplicativos confusos.<br>
+                        Nada de perder 30 minutos cadastrando cada centavo.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+                <h3 class="text-2xl font-bold mb-6 text-center">VEJA COMO FUNCIONA NA PRÁTICA:</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-500 text-white p-3 rounded-lg">
+                            <i class="fas fa-comment text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold">📱 Você manda:</p>
+                            <p class="text-gray-700">"Gastei 45 reais no mercado"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-purple-500 text-white p-3 rounded-lg">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold">🤖 O Planner Zap:</p>
+                            <p class="text-gray-700">"Registrado! ✅ Você já gastou R$ 320 este mês"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-green-500 text-white p-3 rounded-lg">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold">📊 No dashboard:</p>
+                            <p class="text-gray-700">Tudo organizado automaticamente</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="mt-6 text-center text-lg font-semibold text-gray-800">
+                    É LITERALMENTE como mandar mensagem para um amigo.<br>
+                    Só que esse amigo organiza sua vida financeira automaticamente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparação Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Planilhas do Século Passado VS <span class="gradient-text">Meu Planner Zap</span>
+            </h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="border-2 border-gray-300 p-4 bg-red-50 text-red-700 font-bold">PLANILHAS TRADICIONAIS</th>
+                            <th class="border-2 border-gray-300 p-4 bg-green-50 text-green-700 font-bold">MEU PLANNER ZAP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border-2 border-gray-300 p-4 text-center">❌ Abrir Excel/Google Sheets</td>
+                            <td class="border-2 border-gray-300 p-4 text-center">✅ Abrir WhatsApp (que já usa)</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border-2 border-gray-300 p-4 text-center">❌ Preencher 10 campos</td>
+                            <td class="border-2 border-gray-300 p-4 text-center">✅ Mandar 1 mensagem</td>
+                        </tr>
+                        <tr>
+                            <td class="border-2 border-gray-300 p-4 text-center">❌ Calcular manualmente</td>
+                            <td class="border-2 border-gray-300 p-4 text-center">✅ Cálculo automático</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border-2 border-gray-300 p-4 text-center">❌ Perder 30 minutos/dia</td>
+                            <td class="border-2 border-gray-300 p-4 text-center">✅ Gastar 2 minutos/dia</td>
+                        </tr>
+                        <tr>
+                            <td class="border-2 border-gray-300 p-4 text-center">❌ Desistir no 1º mês</td>
+                            <td class="border-2 border-gray-300 p-4 text-center">✅ Usar pelo resto da vida</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border-2 border-gray-300 p-4 text-center">❌ Continuar endividado</td>
+                            <td class="border-2 border-gray-300 p-4 text-center">✅ Finalmente ter controle</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-12 bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
+                <h3 class="text-2xl font-bold mb-6 text-center">A MATEMÁTICA É SIMPLES:</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 text-center">
+                    <div>
+                        <p class="text-lg text-gray-700">Tempo gasto com planilhas:</p>
+                        <p class="text-2xl font-bold text-red-600">30 min/dia = 15 horas/mês</p>
+                    </div>
+                    <div>
+                        <p class="text-lg text-gray-700">Tempo gasto com Planner Zap:</p>
+                        <p class="text-2xl font-bold text-green-600">2 min/dia = 1 hora/mês</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-3xl font-black text-purple-600">VOCÊ ECONOMIZA 14 HORAS POR MÊS.</p>
+                    <p class="text-xl mt-2 text-gray-700">E ainda tem controle total das suas finanças.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                O Que <span class="gradient-text">Quem Já Usa</span> Está Dizendo:
+            </h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Maria Eduarda - 34 anos</h3>
+                    <p class="text-gray-700 mb-4 italic">
+                        "Estava devendo R$ 8.400 no cartão. Em 3 meses usando o Planner Zap consegui organizar tudo e já paguei R$ 4.200. Pela primeira vez em ANOS eu sei exatamente onde meu dinheiro está indo. Chorei quando vi minha dívida caindo."
+                    </p>
+                    <div class="bg-green-100 text-green-800 p-3 rounded-lg text-center font-bold">
+                        Economizou: R$ 4.200 em 3 meses
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Carlos Roberto - 42 anos</h3>
+                    <p class="text-gray-700 mb-4 italic">
+                        "Tentei umas 5 planilhas diferentes. Desistia sempre no segundo mês. Com o Planner Zap já faz 7 meses que uso TODO DIA. É tão fácil que virou automático. Minha esposa também usa. Finalmente estamos conseguindo guardar dinheiro."
+                    </p>
+                    <div class="bg-green-100 text-green-800 p-3 rounded-lg text-center font-bold">
+                        Economizou: R$ 12.800 em 7 meses
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Ana Paula - 29 anos</h3>
+                    <p class="text-gray-700 mb-4 italic">
+                        "Meu maior problema era esquecer onde gastava. Comprava um lanche de R$ 15 e nem anotava. Resultado? No fim do mês não sobrava nada. Agora eu anoto TUDO pelo Zap mesmo, na hora. Já consegui juntar R$ 3.400 para emergências."
+                    </p>
+                    <div class="bg-green-100 text-green-800 p-3 rounded-lg text-center font-bold">
+                        Economizou: R$ 3.400 em 4 meses
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
+                <h3 class="text-2xl font-bold mb-6 text-center">O QUE TODAS ESSAS PESSOAS TÊM EM COMUM?</h3>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="text-center">
+                        <i class="fas fa-times-circle text-red-500 text-2xl mb-2"></i>
+                        <p class="font-semibold">NENHUMA delas "sabia economizar" antes</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-times-circle text-red-500 text-2xl mb-2"></i>
+                        <p class="font-semibold">TODAS tentaram planilhas e desistiram</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-check-circle text-green-500 text-2xl mb-2"></i>
+                        <p class="font-semibold">TODAS estão tendo controle pela PRIMEIRA VEZ</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-check-circle text-green-500 text-2xl mb-2"></i>
+                        <p class="font-semibold">TODAS investiram apenas R$ 27,00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Para Quem É Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Este Método É <span class="gradient-text">Para Você Se:</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-green-700">✅ SIM, É PARA VOCÊ:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Você está cansado de planilhas complicadas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Você já tentou se organizar e desistiu</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Você quer algo SIMPLES e que realmente funcione</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Você usa WhatsApp todo dia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Você quer sair do vermelho de uma vez por todas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Você está disposto a dedicar 2 minutos por dia</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 text-red-700">❌ NÃO É PARA VOCÊ SE:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                            <span>Você prefere continuar usando planilhas complexas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                            <span>Você acha que "já sabe" controlar suas finanças</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                            <span>Você não tem 2 minutos por dia para anotar gastos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                            <span>Você não usa WhatsApp</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
+                <h3 class="text-2xl font-bold mb-4 text-center">SINCERAMENTE:</h3>
+                <p class="text-lg text-gray-700 mb-4 text-center">
+                    Se você está aqui, é porque o que você vem fazendo NÃO ESTÁ FUNCIONANDO.
+                </p>
+                
+                <p class="text-lg text-gray-700 mb-6 text-center">
+                    Você tem duas opções:
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="text-center">
+                        <div class="bg-red-100 p-4 rounded-lg">
+                            <p class="font-bold text-red-700">OPÇÃO 1</p>
+                            <p class="text-gray-700">Continuar do mesmo jeito<br>(e continuar endividado)</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <p class="font-bold text-green-700">OPÇÃO 2</p>
+                            <p class="text-gray-700">Tentar algo diferente<br>pelo preço de uma pizza</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-xl font-bold text-center mt-6 text-purple-600">
+                    Qual você escolhe?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios Section -->
+    <section class="py-16 px-4 bg-gray-50" id="beneficios">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Aqui Está <span class="gradient-text">TUDO Que Você Recebe</span><br>
+                Ao Assinar o Meu Planner Zap Hoje:
+            </h2>
+            
+            <div class="space-y-4 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-green-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Acesso Imediato ao Bot no WhatsApp</h4>
+                            <p class="text-gray-600">Adiciona em 30 segundos e já pode começar a usar</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">Valor Real:</p>
+                        <p class="font-bold text-green-600">Inestimável</p>
+                        <p class="text-sm font-bold text-purple-600">INCLUÍDO</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-green-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Dashboard Inteligente e Simples</h4>
+                            <p class="text-gray-600">Todas suas finanças organizadas em gráficos fáceis</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">Valor Real:</p>
+                        <p class="font-bold text-green-600">R$ 147</p>
+                        <p class="text-sm font-bold text-purple-600">INCLUÍDO</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-green-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Registro Automático de Gastos</h4>
+                            <p class="text-gray-600">Só mandar mensagem que o bot organiza tudo</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">Valor Real:</p>
+                        <p class="font-bold text-green-600">R$ 97</p>
+                        <p class="text-sm font-bold text-purple-600">INCLUÍDO</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-green-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Relatórios Mensais Automáticos</h4>
+                            <p class="text-gray-600">Veja onde você mais gasta sem esforço nenhum</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">Valor Real:</p>
+                        <p class="font-bold text-green-600">R$ 67</p>
+                        <p class="text-sm font-bold text-purple-600">INCLUÍDO</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-green-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Alertas de Gastos Excessivos</h4>
+                            <p class="text-gray-600">O bot te avisa quando você está gastando demais</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">Valor Real:</p>
+                        <p class="font-bold text-green-600">R$ 47</p>
+                        <p class="text-sm font-bold text-purple-600">INCLUÍDO</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-green-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Suporte Direto no WhatsApp</h4>
+                            <p class="text-gray-600">Dúvidas? Nosso time responde em minutos</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-500">Valor Real:</p>
+                        <p class="font-bold text-green-600">R$ 97</p>
+                        <p class="text-sm font-bold text-purple-600">INCLUÍDO</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bônus -->
+            <div class="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-6 mb-8">
+                <h3 class="text-2xl font-bold mb-6 text-center text-yellow-700">🎁 BÔNUS ESPECIAIS POR TEMPO LIMITADO:</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="bg-yellow-200 rounded-full p-3 mr-4">
+                                <i class="fas fa-gift text-yellow-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">BÔNUS #1: Guia "7 Dias Para Sair do Vermelho"</h4>
+                                <p class="text-gray-600">Passo a passo do que fazer na primeira semana</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-gray-500">Valor Real:</p>
+                            <p class="font-bold text-green-600">R$ 27</p>
+                            <p class="text-sm font-bold text-yellow-600">BÔNUS</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="bg-yellow-200 rounded-full p-3 mr-4">
+                                <i class="fas fa-gift text-yellow-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">BÔNUS #2: Planilha de Metas Financeiras</h4>
+                                <p class="text-gray-600">Para você planejar seu futuro (em PDF simples)</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-gray-500">Valor Real:</p>
+                            <p class="font-bold text-green-600">R$ 17</p>
+                            <p class="text-sm font-bold text-yellow-600">BÔNUS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preço -->
+            <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-2xl p-8 text-center" id="cta-section">
+                <div class="mb-6">
+                    <p class="text-2xl mb-2">Valor Total:</p>
+                    <p class="text-4xl font-bold line-through opacity-70">R$ 499</p>
+                </div>
+                
+                <div class="mb-8">
+                    <p class="text-xl mb-2">Hoje Apenas:</p>
+                    <p class="text-6xl font-black text-yellow-300">R$ 27/mês</p>
+                    <p class="text-lg mt-2 opacity-90">"Menos que um lanche no McDonald's"</p>
+                </div>
+                
+                <button onclick="handlePurchase()" class="pulse-animation bg-yellow-400 text-gray-900 px-8 py-6 rounded-lg text-2xl font-black hover:bg-yellow-300 transition transform hover:scale-105">
+                    SIM! QUERO COMEÇAR AGORA
+                </button>
+                
+                <div class="mt-6 text-sm opacity-80">
+                    <i class="fas fa-lock mr-2"></i>Compra 100% segura. Acesso imediato após pagamento.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objeções Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Respostas Para Suas <span class="gradient-text">Principais Dúvidas:</span>
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-3 text-red-600">"Mas Eu Posso Usar Uma Planilha Grátis..."</h3>
+                    <p class="text-gray-700 mb-3">Pode sim. E você provavelmente já tentou, né?</p>
+                    <p class="text-gray-700 mb-3">Deixa eu adivinhar o que aconteceu:</p>
+                    <ul class="space-y-2 text-gray-700 ml-4">
+                        <li>• Primeira semana: "Vou me organizar!"</li>
+                        <li>• Segunda semana: "Ah, depois eu atualizo..."</li>
+                        <li>• Terceira semana: Esqueceu que a planilha existe</li>
+                        <li>• Resultado: ZERO controle financeiro</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">A diferença aqui é SIMPLICIDADE. Você não precisa "lembrar de abrir a planilha". Você só manda mensagem. Como já faz 100x por dia.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-3 text-red-600">"Eu Posso Anotar no Bloco de Notas..."</h3>
+                    <p class="text-gray-700 mb-3">Pode. E aí?</p>
+                    <p class="text-gray-700 mb-3">Onde ficam os totais? As categorias? Os gráficos?</p>
+                    <p class="text-gray-700 mb-3">Você vai ficar somando tudo manualmente no fim do mês?</p>
+                    <p class="text-gray-700">Com o Planner Zap, você manda "gastei 30 reais com uber" e o bot JÁ soma, categoriza e mostra seus gastos totais. AUTOMÁTICO. SEM ESFORÇO.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-3 text-red-600">"R$ 27 Por Mês É Muito Para Mim..."</h3>
+                    <p class="text-gray-700 mb-3">Entendo. Você está endividado e cada real conta.</p>
+                    <p class="text-gray-700 mb-3">Mas pensa comigo:</p>
+                    <p class="text-gray-700 mb-3">Se você conseguir economizar R$ 100/mês (só cortando gastos desnecessários que o Planner vai te mostrar)...</p>
+                    <p class="text-gray-700 mb-3">Em 1 mês você já recuperou o investimento. E ainda fica com R$ 73 a mais no bolso.</p>
+                    <p class="text-gray-700 mb-3">Por 12 meses? São R$ 876 economizados.</p>
+                    <p class="text-xl font-bold text-green-600 mt-4">R$ 27 não é gasto. É INVESTIMENTO. Com retorno de 30x.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgência Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Quanto Tempo Mais Você Vai Continuar<br>
+                <span class="gradient-text">Endividado?</span>
+            </h2>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <p class="text-xl text-gray-700 mb-6 text-center">
+                    Olha, vou ser direto com você:<br>
+                    HOJE você tem a chance de mudar sua vida financeira.<br>
+                    Por R$ 27. Menos que uma pizza.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-red-700 text-center">OPÇÃO 1: Continuar Como Está</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span>Acordar todo dia preocupado com dívidas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span>Brigar com o cônjuge por causa de dinheiro</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span>Passar vergonha quando o cartão é negado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                                <span>Dormir pensando "como vou pagar isso?"</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4 text-green-700 text-center">OPÇÃO 2: Mudar Agora</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Ter controle TOTAL das suas finanças</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Saber exatamente onde cada real está indo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Começar a sair do vermelho em 7 dias</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                <span>Dormir tranquilo pela primeira vez em anos</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="text-lg text-gray-700 mb-6 text-center">A decisão é sua. Mas preciso te avisar: Cada dia que passa, mais juros você paga. Mais a dívida cresce. Mais você afunda.</p>
+                
+                <div class="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
+                    <p class="text-lg font-bold text-center mb-4">Então responde pra mim:</p>
+                    <div class="grid md:grid-cols-3 gap-4 text-center">
+                        <div>
+                            <p class="font-bold text-purple-600">QUANTO VALE</p>
+                            <p class="text-gray-700">sua paz de espírito?</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-purple-600">QUANTO VALE</p>
+                            <p class="text-gray-700">dormir tranquilo?</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-purple-600">QUANTO VALE</p>
+                            <p class="text-gray-700">não ter mais dívidas?</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xl font-bold text-center mt-6 text-purple-600">
+                        Se vale mais que R$ 27/mês, clica no botão abaixo.
+                    </p>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <button onclick="handlePurchase()" class="pulse-animation bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-6 rounded-lg text-2xl font-black hover:from-purple-700 hover:to-indigo-700 transition transform hover:scale-105">
+                        QUERO MUDAR MINHA VIDA AGORA
+                    </button>
+                    <p class="mt-4 text-sm text-gray-600">"Depois que assinar, você recebe acesso em 2 minutos"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantia Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center justify-center bg-green-600 text-white rounded-full p-4 mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-green-700 mb-2">🛡️ GARANTIA BLINDADA DE 30 DIAS 🛡️</h2>
+                    <h3 class="text-2xl font-bold text-gray-900">Eu Assumo TODO o Risco Por Você</h3>
+                </div>
+                
+                <div class="text-center mb-8">
+                    <p class="text-lg text-gray-700 mb-4">
+                        Olha, eu sei que você pode estar com um pé atrás. Normal. Você já tentou de tudo e não funcionou.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Por isso vou fazer algo que parece loucura:
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6 mb-8 border-2 border-green-300">
+                    <p class="text-lg italic text-gray-700 text-center mb-4">
+                        "Se em 30 dias você usar o Planner Zap, registrar suas despesas, E MESMO ASSIM achar que não valeu a pena...
+                    </p>
+                    <p class="text-2xl font-bold text-green-600 text-center">
+                        Eu devolvo 100% do seu dinheiro.
+                    </p>
+                    <p class="text-lg text-gray-700 text-center mt-4">
+                        Sem perguntas. Sem burocracia. Sem enrolação."
+                    </p>
+                    <p class="text-center mt-4 text-gray-600">
+                        É só mandar uma mensagem e pronto.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Por Que Posso Fazer Essa Garantia Insana?</h3>
+                    <p class="text-lg text-gray-700 mb-4">Simples:</p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Dos mais de 500 usuários ativos...<br>
+                        <span class="font-bold text-green-600">MENOS DE 1% pediram reembolso.</span>
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        A maioria cancela porque mudou de telefone ou esqueceu de atualizar o cartão.
+                    </p>
+                    <p class="text-xl font-bold text-green-600 mb-4">O produto FUNCIONA. As pessoas USAM.</p>
+                    <p class="text-lg text-gray-700 mb-6">E você vai usar também.</p>
+                    
+                    <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-2 text-red-700">O ÚNICO RISCO REAL AQUI É:</h3>
+                        <p class="text-lg text-gray-700">
+                            Você NÃO assinar e continuar endividado pelo resto da vida.<br>
+                            Isso sim seria um risco que eu não tomaria.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <button onclick="handlePurchase()" class="pulse-animation bg-green-600 text-white px-8 py-6 rounded-lg text-2xl font-black hover:bg-green-700 transition transform hover:scale-105">
+                            QUERO TESTAR SEM RISCO AGORA
+                        </button>
+                        <p class="mt-4 text-sm text-gray-600">"Garantia válida para novos assinantes"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Ainda Com <span class="gradient-text">Dúvidas?</span><br>
+                Aqui Estão as Respostas:
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(1)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50">
+                        <h3 class="font-bold text-lg">Funciona em qualquer celular?</h3>
+                        <i class="fas fa-chevron-down transition-transform" id="faq-icon-1"></i>
+                    </button>
+                    <div id="faq-content-1" class="hidden px-6 pb-6">
+                        <p class="text-gray-700">
+                            SIM. Se você tem WhatsApp, funciona. iPhone, Android, qualquer um. É só adicionar o bot como contato.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(2)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50">
+                        <h3 class="font-bold text-lg">Preciso saber de tecnologia?</h3>
+                        <i class="fas fa-chevron-down transition-transform" id="faq-icon-2"></i>
+                    </button>
+                    <div id="faq-content-2" class="hidden px-6 pb-6">
+                        <p class="text-gray-700">
+                            NÃO. Se você sabe mandar mensagem no WhatsApp, você sabe usar o Planner Zap. É literalmente só conversar.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(3)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50">
+                        <h3 class="font-bold text-lg">E se eu esquecer de anotar algum gasto?</h3>
+                        <i class="fas fa-chevron-down transition-transform" id="faq-icon-3"></i>
+                    </button>
+                    <div id="faq-content-3" class="hidden px-6 pb-6">
+                        <p class="text-gray-700">
+                            Normal. Você pode anotar depois. O bot aceita comandos tipo "ontem gastei 50 reais". Sem stress.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(4)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50">
+                        <h3 class="font-bold text-lg">Meus dados ficam seguros?</h3>
+                        <i class="fas fa-chevron-down transition-transform" id="faq-icon-4"></i>
+                    </button>
+                    <div id="faq-content-4" class="hidden px-6 pb-6">
+                        <p class="text-gray-700">
+                            SIM. Ninguém além de você vê suas informações. Nem nós. É tudo privado e criptografado pelo WhatsApp.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(5)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50">
+                        <h3 class="font-bold text-lg">Posso cancelar quando quiser?</h3>
+                        <i class="fas fa-chevron-down transition-transform" id="faq-icon-5"></i>
+                    </button>
+                    <div id="faq-content-5" class="hidden px-6 pb-6">
+                        <p class="text-gray-700">
+                            SIM. Sem multa, sem burocracia. É só mandar mensagem pedindo cancelamento. Mas duvido que você vai querer.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(6)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50">
+                        <h3 class="font-bold text-lg">Funciona para casais?</h3>
+                        <i class="fas fa-chevron-down transition-transform" id="faq-icon-6"></i>
+                    </button>
+                    <div id="faq-content-6" class="hidden px-6 pb-6">
+                        <p class="text-gray-700">
+                            SIM! Vários casais usam juntos. Cada um tem sua conta e vocês podem compartilhar os dados se quiserem.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(7)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50">
+                        <h3 class="font-bold text-lg">E se eu tiver dúvida depois de assinar?</h3>
+                        <i class="fas fa-chevron-down transition-transform" id="faq-icon-7"></i>
+                    </button>
+                    <div id="faq-content-7" class="hidden px-6 pb-6">
+                        <p class="text-gray-700">
+                            Nosso suporte responde em minutos pelo WhatsApp. Você nunca fica sozinho.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md">
+                    <button onclick="toggleFAQ(8)" class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50">
+                        <h3 class="font-bold text-lg">Por que só R$ 27?</h3>
+                        <i class="fas fa-chevron-down transition-transform" id="faq-icon-8"></i>
+                    </button>
+                    <div id="faq-content-8" class="hidden px-6 pb-6">
+                        <p class="text-gray-700">
+                            Porque queremos que TODO MUNDO possa usar. Milhões de brasileiros precisam dessa solução. Não adianta custar R$ 200 e só rico usar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-xl font-bold mb-6 text-gray-900">"Todas as Minhas Dúvidas Foram Respondidas"</p>
+                <button onclick="handlePurchase()" class="pulse-animation bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-6 rounded-lg text-2xl font-black hover:from-purple-700 hover:to-indigo-700 transition transform hover:scale-105">
+                    QUERO COMEÇAR AGORA MESMO
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PS Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-2xl p-8">
+                <h2 class="text-2xl font-bold mb-6 text-purple-700">P.S. - Uma última coisa antes de você decidir...</h2>
+                
+                <p class="text-lg text-gray-700 mb-4">
+                    Sabe qual é a diferença entre quem sai do vermelho e quem continua afundando?
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="text-center">
+                        <p class="font-bold text-red-600">NÃO é quanto ganha.</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-red-600">NÃO é quanto tem guardado.</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-red-600">NÃO é "sorte".</p>
+                    </div>
+                </div>
+                
+                <p class="text-2xl font-bold text-center mb-6 text-purple-600">É DECISÃO.</p>
+                
+                <p class="text-lg text-gray-700 mb-6">
+                    A decisão de PARAR de fazer o que não funciona.<br>
+                    A decisão de TENTAR algo diferente.<br>
+                    A decisão de AGIR hoje.
+                </p>
+                
+                <p class="text-lg text-gray-700 mb-8">Daqui 3 meses, você pode estar em um destes cenários:</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3 text-red-700">CENÁRIO 1:</h3>
+                        <p class="text-gray-700">
+                            Você não assinou. Continuou tentando se organizar "sozinho". Continuou endividado. Continuou estressado.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3 text-green-700">CENÁRIO 2:</h3>
+                        <p class="text-gray-700">
+                            Você assinou. Usou 2 minutos por dia. Começou a ver exatamente onde seu dinheiro ia. Cortou gastos bobos. Começou a sair do vermelho. Dormiu tranquilo.
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="text-xl font-bold text-center mb-6 text-purple-600">Qual cenário você quer viver?</p>
+                
+                <p class="text-lg text-gray-700 text-center mb-6">
+                    A escolha é sua.<br>
+                    A ferramenta está aqui.<br>
+                    O preço é menos que uma pizza.<br>
+                    Mas você precisa ESCOLHER. Agora.
+                </p>
+                
+                <div class="text-center">
+                    <button onclick="handlePurchase()" class="pulse-animation bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-6 rounded-lg text-2xl font-black hover:from-purple-700 hover:to-indigo-700 transition transform hover:scale-105">
+                        ESCOLHO O CENÁRIO 2 - QUERO MUDAR
+                    </button>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-purple-200">
+                    <p class="text-center text-gray-600">— Time Meu Planner Zap</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-50 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-gray-900">P.P.S. -</h3>
+                <p class="text-lg text-gray-700 mb-4">
+                    Aquele seu amigo que está bem financeiramente?
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    Ele não ganha muito mais que você.
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    Ele só tem CONTROLE do dinheiro dele.
+                </p>
+                <p class="text-lg text-gray-700 mb-6">
+                    E você também pode ter. Por R$ 27. Hoje.
+                </p>
+                
+                <div class="text-center">
+                    <button onclick="handlePurchase()" class="pulse-animation bg-red-600 text-white px-8 py-6 rounded-lg text-xl font-black hover:bg-red-700 transition transform hover:scale-105">
+                        ESTA É MINHA ÚLTIMA CHANCE
+                    </button>
+                    <p class="mt-4 text-sm text-gray-600">"Acesso liberado em 2 minutos após o pagamento"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="mb-4">© 2024 Meu Planner Zap - Todos os direitos reservados</p>
+            <p class="text-sm text-gray-400 mb-4">
+                Contato: suporte@meuplannerzap.com.br | WhatsApp: (11) 99999-9999
+            </p>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="#" class="hover:text-purple-400 transition">Termos de Uso</a>
+                <a href="#" class="hover:text-purple-400 transition">Política de Privacidade</a>
+                <a href="#" class="hover:text-purple-400 transition">Garantia</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Scroll to CTA
+        function scrollToCTA() {
+            document.getElementById('cta-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Handle Purchase
+        function handlePurchase() {
+            // Aqui você pode integrar com seu gateway de pagamento
+            // Por enquanto, vamos mostrar uma mensagem
+            alert('Redirecionando para página de pagamento...');
+            // window.location.href = 'URL_DO_PAGAMENTO';
+        }
+        
+        // Show/hide sticky CTA based on scroll
+        window.addEventListener('scroll', function() {
+            const stickyCTA = document.getElementById('sticky-cta');
+            const ctaSection = document.getElementById('cta-section');
+            const ctaSectionTop = ctaSection.offsetTop;
+            
+            if (window.pageYOffset > ctaSectionTop + 500) {
+                stickyCTA.classList.add('show');
+            } else {
+                stickyCTA.classList.remove('show');
+            }
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

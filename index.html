@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner Zap - Controle Suas Finanças pelo WhatsApp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            margin: -20px -20px 40px -20px;
+        }
+        
+        .offer-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 2em;
+            color: #128C7E;
+            margin: 40px 0 20px 0;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            color: #25D366;
+            margin: 30px 0 15px 0;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            opacity: 0.8;
+            font-size: 1.2em;
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .step {
+            background: #f8f9fa;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #25D366;
+        }
+        
+        .step-number {
+            background: #25D366;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial {
+            background: #e8f5e8;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #25D366;
+        }
+        
+        .stars {
+            color: #ffc107;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-bottom: 3px solid #25D366;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #128C7E;
+            margin-bottom: 10px;
+        }
+        
+        .benefits {
+            background: linear-gradient(135deg, #e8f5e8, #d4edda);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .checkmark {
+            color: #25D366;
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+        
+        .dashboard-images {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .dashboard-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .dashboard-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .urgent-timer {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            background: #f8f9fa;
+            margin: 40px -20px -20px -20px;
+            border-top: 3px solid #25D366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="offer-badge">🔥 OFERTA EXCLUSIVA POR 48H 🔥</div>
+            <h1>TESTE O MEU PLANNER ZAP POR APENAS R$ 9,00 NO PRIMEIRO MÊS</h1>
+            <p style="font-size: 1.3em; margin-top: 20px;">Finalmente Controle Suas Finanças Pelo WhatsApp em Apenas 2 Minutos Por Dia</p>
+        </div>
+
+        <div class="price-box">
+            <div class="old-price">Normal: R$ 27/mês</div>
+            <div class="price">R$ 9,00</div>
+            <p>Primeiro mês com 67% OFF</p>
+            <p style="margin-top: 15px;">✅ Acesso imediato após o pagamento</p>
+            <p>✅ Cancele quando quiser</p>
+            <p>✅ Economia de R$ 18 HOJE</p>
+            <a href="#" class="cta-button">COMEÇAR TESTE POR R$ 9,00 AGORA</a>
+            <div class="urgent-timer">⏰ Oferta válida por 48 horas</div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p style="font-size: 1.2em; font-weight: bold; margin-bottom: 10px;">Muitas pessoas já estão usando</p>
+            <p><em>"Tô amando usar esse Planner! ❤️"</em> - Clara S.</p>
+            <p><em>"Era exatamente o que eu tava procurando!"</em> - Ana C.</p>
+        </div>
+
+        <h2>"Mas Como Funciona Na Prática?"</h2>
+        <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">
+            <strong>Eu sei que você deve estar se perguntando:</strong><br>
+            <em>"É um app? É uma planilha? Como eu uso isso?"</em><br><br>
+            <strong>DEIXA EU EXPLICAR BEM SIMPLES:</strong>
+        </p>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>📱 PASSO 1: Você Usa o WhatsApp (que já tem)</h3>
+            <p><strong>Não precisa baixar nada.</strong></p>
+            <p><strong>Não precisa instalar aplicativo.</strong></p>
+            <p><strong>Só conversar no whatsapp com a "Manu" (nossa IA)</strong></p>
+            <p><em>Como se fosse conversar com um amigo.</em></p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>💬 PASSO 2: Você Manda Suas Despesas</h3>
+            
+            <div style="margin: 20px 0;">
+                <p><strong>Opção 1: Envie por texto</strong></p>
+                <p><strong>Você:</strong> "Gastei 45 reais no mercado"</p>
+                <p><strong>Manu:</strong> "Registrado! ✅ Categoria: Alimentação"</p>
+                <div style="text-align: center; margin: 15px 0;">
+                    <img src="images/mandaTexto.png" alt="Enviando despesa por texto no WhatsApp" class="dashboard-image" style="max-width: 300px;">
+                </div>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <p><strong>Opção 2: Envie um áudio</strong></p>
+                <p><strong>Você:</strong> "Paguei 150 de luz"</p>
+                <p><strong>Manu:</strong> "Anotado! ✅ Você gastou R$ 320 este mês"</p>
+                <div style="text-align: center; margin: 15px 0;">
+                    <img src="images/mandaAudio.png" alt="Enviando despesa por áudio no WhatsApp" class="dashboard-image" style="max-width: 300px;">
+                </div>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <p><strong>Opção 3: Tire uma foto da nota fiscal</strong></p>
+                <p><strong>Manu:</strong> "Registrado! Você gastou 80 reais na padaria"</p>
+                <div style="text-align: center; margin: 15px 0;">
+                    <img src="images/fotoNotaFiscal.png" alt="Enviando foto da nota fiscal no WhatsApp" class="dashboard-image" style="max-width: 300px;">
+                </div>
+            </div>
+            
+            <p><strong>SIMPLES ASSIM. Como conversar no Whats.</strong></p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>📊 PASSO 3: Você Acessa Seu Dashboard</h3>
+            <p><strong>Tudo que você registrou no WhatsApp aparece organizado num painel web simples.</strong></p>
+            <p><strong>Gráficos. Categorias. Totais.</strong></p>
+            <p><strong>Tudo AUTOMÁTICO.</strong></p>
+            
+            <div class="dashboard-images">
+                <img src="images/IMG_8897.png" alt="Dashboard do Planner Zap - Visão Geral" class="dashboard-image">
+                <img src="images/IMG_8898.png" alt="Dashboard do Planner Zap - Gráficos e Análises" class="dashboard-image">
+            </div>
+        </div>
+
+        <h2>É Isso. Só 3 Passos.</h2>
+        <div style="text-align: center; margin: 30px 0;">
+            <p><strong>Não tem planilha complicada.</strong></p>
+            <p><strong>Não tem app confuso.</strong></p>
+            <p><strong>Não tem nada massivo.</strong></p>
+            <br>
+            <p><strong>VOCÊ JÁ USA WHATSAPP TODO DIA, NÉ?</strong></p>
+            <p><strong>Agora você usa para controlar seu dinheiro também.</strong></p>
+        </div>
+
+        <div class="benefits">
+            <h2 style="color: #128C7E; text-align: center;">Este Planner Foi Feito Para Você Se:</h2>
+            <div class="benefit-item">
+                <span class="checkmark">✅</span>
+                <span>Você trabalha muito e tem pouco tempo</span>
+            </div>
+            <div class="benefit-item">
+                <span class="checkmark">✅</span>
+                <span>Você tem filhos e vive correndo</span>
+            </div>
+            <div class="benefit-item">
+                <span class="checkmark">✅</span>
+                <span>Você já tentou planilhas e desistiu</span>
+            </div>
+            <div class="benefit-item">
+                <span class="checkmark">✅</span>
+                <span>Você quer algo SIMPLES que funcione</span>
+            </div>
+            <div class="benefit-item">
+                <span class="checkmark">✅</span>
+                <span>Você está cansado de não saber onde o dinheiro vai</span>
+            </div>
+            <div class="benefit-item">
+                <span class="checkmark">✅</span>
+                <span>Você usa WhatsApp todo dia</span>
+            </div>
+        </div>
+
+        <h2>Veja O Que Quem Já Usa Está Dizendo:</h2>
+
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <h4>Clara Santil</h4>
+            <p><strong>"Que legal!! ❤️"</strong></p>
+            <p><em>"Amiga e é muito legal mesmo viu.. eu tô amando usar esse Planner ❤️"</em></p>
+        </div>
+
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <h4>Ana Carolina</h4>
+            <p><strong>"Nossa amiga era exatamente oq eu tava procurando ❤️"</strong></p>
+            <p><em>"Amiga pensa em um app muuuuuuito bom! Fácil de usar, principalmente pra quem tem filhos e trabalha muito igual vc e acaba não tendo tempo"</em></p>
+        </div>
+
+        <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <h4>Marina Machi</h4>
+            <p><strong>"Que legal!"</strong></p>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <h3>Muitas pessoas já estão usando</h3>
+            <p style="font-size: 1.2em; margin: 20px 0;"><strong>E você pode ser a próxima.</strong></p>
+            <p style="font-size: 1.1em;"><strong>Por apenas R$ 9,00 no primeiro mês.</strong></p>
+            <a href="#" class="cta-button">QUERO TESTAR POR R$ 9,00</a>
+        </div>
+
+        <h2>OFERTA ESPECIAL</h2>
+
+        <div class="price-box">
+            <h3>Quanto Custa?</h3>
+            <p><strong>Olha, vou ser sincera com você:</strong></p>
+            <p>O valor normal do Meu Planner Zap é <strong>R$ 27/mês</strong>.</p>
+            <p>Menos que um lanche no McDonald's.</p>
+            <p><strong>MAS</strong> como você chegou aqui pelo perfil da Roberta, você tem uma condição especial:</p>
+            
+            <div style="margin-top: 30px;">
+                <h3>🎁 OFERTA EXCLUSIVA (48h) 🎁</h3>
+                <p>✅ <strong>Primeiro mês:</strong> R$ 9,00 (67% OFF)</p>
+                <p>✅ Acesso completo imediato</p>
+                <p>✅ Suporte direto no WhatsApp</p>
+                <p>✅ Pode cancelar quando quiser</p>
+                <p>📅 <strong>Depois:</strong> R$ 27/mês</p>
+                <p><em>(Ou cancela quando quiser)</em></p>
+                <p>💰 <strong>Você economiza R$ 18 HOJE</strong></p>
+            </div>
+            
+            <a href="#" class="cta-button">COMEÇAR POR R$ 9,00 AGORA</a>
+            <div class="urgent-timer">⏰ Essa oferta expira em 48 horas</div>
+        </div>
+
+        <h2>FAQ - Dúvidas Frequentes</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">"É um app ou um site?"</div>
+            <p><strong>Os dois! 😊</strong></p>
+            <p>Você usa pelo <strong>WHATSAPP</strong> (pra registrar gastos)</p>
+            <p>E acessa um <strong>SITE</strong> simples (pra ver o dashboard)</p>
+            <p>Fácil de usar principalmente pra quem tem filhos e trabalha muito e não tem tempo.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">"Esse valor de 27 é por mês?"</div>
+            <p><strong>Sim! É uma assinatura mensal.</strong></p>
+            <p><strong>MAS</strong> você vai testar por R$ 9,00 no primeiro mês.</p>
+            <p>Se não gostar, cancela. Sem multa.</p>
+            <p>Se gostar (como as 500+ pessoas que usam), continua por R$ 27/mês.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">"Preciso baixar algum app?"</div>
+            <p><strong>NÃO!</strong></p>
+            <p>Você já tem WhatsApp, né?</p>
+            <p>Então só adiciona o Planner como contato.</p>
+            <p>Pronto. Já pode usar.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">"Consigo usar mesmo sem tempo?"</div>
+            <p><strong>SIM! Foi feito pra isso.</strong></p>
+            <p>Gastou algo? Manda no Whats. 2 minutos.</p>
+            <p>Acabou. O bot organiza tudo pra você.</p>
+            <p>Você não precisa sentar 30min preenchendo planilha.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">"Tem cupom de desconto?"</div>
+            <p><strong>TEM! 🎉</strong></p>
+            <p>Por R$ 9,00 no primeiro mês (use código: <strong>TESTE9</strong>)</p>
+            <p>Mas só por 48 horas!</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">"E se eu quiser cancelar?"</div>
+            <p>É só mandar mensagem pedindo cancelamento.</p>
+            <p>Sem multa. Sem burocracia. Sem enrolação.</p>
+            <p>Mas duvido que você vai querer. 😊</p>
+        </div>
+
+        <h2>Você Tem 2 Opções Agora:</h2>
+
+        <div class="step" style="background: #ffebee; border-left-color: #f44336;">
+            <h3 style="color: #f44336;">OPÇÃO 1: Não Fazer Nada</h3>
+            <p>Continuar sem controle das finanças.</p>
+            <p>Continuar estressada no fim do mês.</p>
+            <p>Continuar sem saber onde o dinheiro foi.</p>
+        </div>
+
+        <div class="step" style="background: #e8f5e8; border-left-color: #4caf50;">
+            <h3 style="color: #4caf50;">OPÇÃO 2: Testar Por R$ 9,00</h3>
+            <p>Começar a ter controle HOJE.</p>
+            <p>Anotar tudo pelo WhatsApp em 2 minutos.</p>
+            <p>Saber exatamente onde cada real vai.</p>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <h2>A Decisão É Sua.</h2>
+            <p><strong>Mas pensa comigo:</strong></p>
+            <p>R$ 9,00 é menos que um lanche.</p>
+            <p>A oferta expira em 48 horas.</p>
+            <p>Você pode cancelar quando quiser.</p>
+            <br>
+            <h3><strong>Qual é o risco?</strong></h3>
+            <a href="#" class="cta-button">QUERO COMEÇAR AGORA POR R$ 9,00</a>
+            <p style="margin-top: 15px; font-style: italic;">"Acesso liberado em 2 minutos"</p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 30px; margin: 40px 0; border-radius: 10px; text-align: center;">
+            <p style="font-style: italic; margin-bottom: 20px;"><strong>P.S.</strong> - "Nossa amiga era exatamente oq eu tava procurando ❤️"</p>
+            <p>Essa foi a Ana Carolina quando testou.</p>
+            <p><strong>Você pode ser a próxima.</strong></p>
+            <p><strong>Por R$ 9,00.</strong></p>
+            <p><strong>HOJE.</strong></p>
+            <a href="#" class="cta-button">ESTA É MINHA ÚLTIMA CHANCE</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Planner Zap - Todos os direitos reservados</p>
+            <p style="margin-top: 10px;">Contato: suporte@plannerzap.com.br</p>
+        </div>
+    </div>
+</body>
+</html>
